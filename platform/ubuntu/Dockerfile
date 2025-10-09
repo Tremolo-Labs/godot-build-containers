@@ -1,6 +1,5 @@
-FROM ubuntu:24.04  AS base-image
+FROM registry.gitlab.steamos.cloud/steamrt/sniper/sdk  AS base-image
 
-RUN sed -i 's/^# deb-src/deb-src/g' /etc/apt/sources.list
 RUN apt update -y
 RUN apt install -y build-essential
 RUN apt install -y cmake
@@ -15,7 +14,7 @@ RUN apt install -y autoconf
 RUN apt install -y libtool
 RUN apt install -y flex
 RUN apt install -y bison
-RUN pip3 install scons --break-system-packages
+RUN pip3 install scons
 
-FROM ubuntu:24.04
+FROM registry.gitlab.steamos.cloud/steamrt/sniper/sdk
 COPY --from=base-image / /
