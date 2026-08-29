@@ -44,7 +44,7 @@ jobs:
         with:
           context: platform/ubuntu
           push: true
-          tags: ghcr.io/nonameentername/godot-ubuntu:${{ env.VERSION }},ghcr.io/nonameentername/godot-ubuntu:latest
+          tags: ghcr.io/${{ env.ACTOR }}/godot-ubuntu:${{ env.VERSION }},ghcr.io/${{ env.ACTOR }}/godot-ubuntu:latest
 
   build-and-push-windows-image:
     name: Windows (MinGW)
@@ -75,7 +75,7 @@ jobs:
         with:
           context: platform/mingw
           push: true
-          tags: ghcr.io/nonameentername/godot-mingw:${{ env.VERSION }},ghcr.io/nonameentername/godot-mingw:latest
+          tags: ghcr.io/${{ env.ACTOR }}/godot-mingw:${{ env.VERSION }},ghcr.io/${{ env.ACTOR }}/godot-mingw:latest
 
   build-and-push-macos-image:
     name: MacOS (osxcross)
@@ -106,7 +106,7 @@ jobs:
         with:
           context: platform/osxcross
           push: true
-          tags: ghcr.io/nonameentername/godot-osxcross:${{ env.VERSION }},ghcr.io/nonameentername/godot-osxcross:latest
+          tags: ghcr.io/${{ env.ACTOR }}/godot-osxcross:${{ env.VERSION }},ghcr.io/${{ env.ACTOR }}/godot-osxcross:latest
 
   build-and-push-ios-image:
     name: iOS (ioscross)
@@ -137,7 +137,7 @@ jobs:
         with:
           context: platform/ioscross
           push: true
-          tags: ghcr.io/nonameentername/godot-ioscross:${{ env.VERSION }},ghcr.io/nonameentername/godot-ioscross:latest
+          tags: ghcr.io/${{ env.ACTOR }}/godot-ioscross:${{ env.VERSION }},ghcr.io/${{ env.ACTOR }}/godot-ioscross:latest
           build-args: |
             DOWNLOAD_URL=${{ vars.IOSCROSS_DOWNLOAD_URL }}
           secrets: |
@@ -172,7 +172,7 @@ jobs:
         with:
           context: platform/android
           push: true
-          tags: ghcr.io/nonameentername/godot-android:${{ env.VERSION }},ghcr.io/nonameentername/godot-android:latest
+          tags: ghcr.io/${{ env.ACTOR }}/godot-android:${{ env.VERSION }},ghcr.io/${{ env.ACTOR }}/godot-android:latest
 
   build-and-push-wasm-image:
     name: Wasm (emscripten)
@@ -203,4 +203,4 @@ jobs:
         with:
           context: platform/web
           push: true
-          tags: ghcr.io/nonameentername/godot-wasm:${{ env.VERSION }},ghcr.io/nonameentername/godot-wasm:latest
+          tags: ghcr.io/${{ env.ACTOR }}/godot-wasm:${{ env.VERSION }},ghcr.io/${{ env.ACTOR }}/godot-wasm:latest
