@@ -15,5 +15,5 @@ RUN apt install -y libtool
 RUN apt install -y flex
 RUN apt install -y bison
 
-FROM registry.gitlab.steamos.cloud/steamrt/sniper/sdk
+FROM registry.gitlab.steamos.cloud/steamrt/steamrt4/sdk
 COPY --from=base-image / /
